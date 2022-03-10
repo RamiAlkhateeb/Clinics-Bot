@@ -19,7 +19,7 @@ namespace Clincs.Common.Authorization
             _appSettings = appSettings.Value;
         }
 
-        public async Task Invoke(HttpContext context, IClincService userService, IJwtUtils jwtUtils)
+        public async Task Invoke(HttpContext context, IClinicService userService, IJwtUtils jwtUtils)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
             var userId = jwtUtils.ValidateJwtToken(token);

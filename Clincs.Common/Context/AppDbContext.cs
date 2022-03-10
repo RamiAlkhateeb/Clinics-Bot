@@ -1,4 +1,5 @@
-﻿using Clincs.Common.Models.Database.API;
+﻿using Clincs.Common.Models.Database;
+using Clincs.Common.Models.Database.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -17,5 +18,8 @@ namespace Clincs.Common.Context
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<ConversationReferenceEntity> conversationReferenceEntities { get; set; }
+        public DbSet<NotificationEntity> notificationEntities { get; set; }
+
     }
 }

@@ -1,11 +1,15 @@
 ﻿using Clincs.Common.Models.Database.API;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Clincs.Common.Helpers
 {
     public class Functions
     {
+
+
         public bool isDoctorFull(List<Appointment> slots)
         {
             if (slots.Count() > 11)
@@ -54,5 +58,7 @@ namespace Clincs.Common.Helpers
 
 
         }
+
+  
     }
 }

@@ -16,5 +16,7 @@ namespace Clincs.Common.Models.Database.API
         public User Doctor { get; set; }
 
         public int Number { get; set; }
+
+        public bool isCanceled { get; set; }
     }
 }

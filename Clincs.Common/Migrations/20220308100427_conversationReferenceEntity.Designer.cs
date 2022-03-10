@@ -4,14 +4,16 @@ using Clincs.Common.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clincs.Common.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220308100427_conversationReferenceEntity")]
+    partial class conversationReferenceEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,72 +51,6 @@ namespace Clincs.Common.Migrations
                     b.HasIndex("DoctorId");
 
                     b.ToTable("Appointments");
-                });
-
-            modelBuilder.Entity("Clincs.Common.Models.Database.API.NotificationEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AdditionalData")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ApprovalType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Attachment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InstanceId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsSent")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("NotificationType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ReceivedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("RequestId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RequestNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RequestSummary")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("SentOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ShortDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("notificationEntities");
                 });
 
             modelBuilder.Entity("Clincs.Common.Models.Database.API.User", b =>
